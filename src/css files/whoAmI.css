@@ -1,0 +1,23 @@
+#descr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aqua;
+    padding: 10px 0;
+    margin: 0 20px;
+}
+#profilePicture {
+    width: 50%;
+    min-width: 150px;
+    max-width: 300px;
+    border-radius: 50%;
+}
+#descr > p {
+    text-align: center;
+    margin: 20px;
+}
+#regionMap {
+    width: 75%;
+    min-width: 200px;
+    max-width: 500px;
+}

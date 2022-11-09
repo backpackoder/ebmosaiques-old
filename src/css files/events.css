@@ -1,0 +1,21 @@
+#expoWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    text-align: center;
+    margin: 0 auto 20px;
+}
+.expo {
+    width: 100%;
+    max-width: 600px;
+    background-color: aliceblue;
+    padding: 0 20px;
+}
+.expo * {
+    margin: 10px 0;
+}
+.expoImg {
+    width: 80%;
+    min-width: 150px;
+}

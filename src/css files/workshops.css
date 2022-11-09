@@ -1,0 +1,39 @@
+#workshopDescr {
+    text-align: center;
+    margin: 10px 20px;
+}
+#workshopsWrapper {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 20px;
+}
+.workshop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 45%;
+    text-align: center;
+    margin: 0;
+}
+.workshopImg {
+    width: 100%;
+    min-width: 100px;
+    max-width: 300px;
+    border: solid 5px pink;
+    box-sizing: border-box;
+}
+.workshopType {
+    font-size: 1rem;
+    margin: 5px 0;
+}
+.workshopDetails {
+    background-color: aqua;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 0 20px;
+}
+h4 {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}

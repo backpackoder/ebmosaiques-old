@@ -1,0 +1,21 @@
+/* Main */
+@import './css files/header.css';
+@import './css files/menuMobile.css';
+@import './css files/menuDesktop.css';
+@import './css files/footer.css';
+
+/* Home page */
+@import './css files/parts.css';
+
+/* Sections */
+  /* Who am I */
+  @import './css files/whoAmI.css';
+
+  /* Workshops */
+  @import './css files/workshops.css';
+
+  /* Events */
+  @import './css files/events.css';
+  
+  /* Ont the news */
+  @import './css files/onTheNews.css';
