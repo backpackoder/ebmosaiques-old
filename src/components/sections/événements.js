@@ -1,4 +1,4 @@
-function Events() {
+function Événements() {
     return (
         <>
         <h2>Liste des expositions</h2>
@@ -47,4 +47,4 @@ function Events() {
     )
 }
 
-export default Events
+export default Événements

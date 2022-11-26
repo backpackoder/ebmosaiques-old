@@ -1,4 +1,4 @@
-function Clocks() {
+function Horloges() {
     return (
         <>
         <p className="descrPart">
@@ -9,4 +9,4 @@ function Clocks() {
     )
 }
 
-export default Clocks
+export default Horloges

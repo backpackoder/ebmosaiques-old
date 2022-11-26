@@ -1,4 +1,4 @@
-function PaintingsAndDecorations() {
+function TableauxEtDécors() {
     return (
         <>
         <p className="descrPart">
@@ -9,4 +9,4 @@ function PaintingsAndDecorations() {
     )
 }
 
-export default PaintingsAndDecorations
+export default TableauxEtDécors

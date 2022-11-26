@@ -1,4 +1,4 @@
-function FaceToFace() {
+function ÀDomicile() {
     return (
         <div className="workshopDetails">
         <h4>À domicile</h4>
@@ -26,4 +26,4 @@ function FaceToFace() {
     )
 }
 
-export default FaceToFace
+export default ÀDomicile

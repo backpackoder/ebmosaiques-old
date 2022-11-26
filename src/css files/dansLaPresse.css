@@ -24,8 +24,10 @@
     text-decoration: underline;
 }
 .newsImg {
+    display: block;
     width: 80%;
     min-width: 150px;
+    margin: 10px auto;
 }
 .newsLink {
     background-color: lightgreen;

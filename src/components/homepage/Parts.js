@@ -24,25 +24,25 @@ function CollectionPart() {
     return (
         <>
         <div id="partsWrapper">
-            <h2>Mes collections</h2>
+            <h2>Toutes mes collections</h2>
             <div id='collectionParts'>
-                <div id="clocks" className="part">
+                <div id="horloges" className="part">
                     <h3>Mes pendules</h3>
                     <img
                         src="https://www.ebmosaiques.com/ima2/ha16p.jpg"
                         alt="Exemple de pendule en mosaïque"
                         className="demoPicture">
                     </img>
-                    <Link to='/clocks'><button className="goToCollection">Voir la collection</button></Link>
+                    <Link to='/collections/horloges'><button className="goToCollection">Voir la collection</button></Link>
                 </div>
-                <div id="mirrors" className="part">
+                <div id="miroirs" className="part">
                     <h3>Mes miroirs</h3>
                     <img
                         src="https://www.ebmosaiques.com/ima2/mir12m.jpg"
                         alt="Exemple de miroir en mosaïque"
                         className="demoPicture">
                     </img>
-                    <Link to='/mirrors'><button className="goToCollection">Voir la collection</button></Link>
+                    <Link to='/collections/miroirs'><button className="goToCollection">Voir la collection</button></Link>
                 </div>
                 <div id="paintingsAndDecorations" className="part">
                     <h3>Mes tableaux</h3>
@@ -51,7 +51,7 @@ function CollectionPart() {
                         alt="Exemple de tableau en mosaïque"
                         className="demoPicture">
                     </img>
-                    <Link to='/paintingsAndDecorations'><button className="goToCollection">Voir la collection</button></Link>
+                    <Link to='/collections/tableaux-et-décors'><button className="goToCollection">Voir la collection</button></Link>
                 </div>
                 <div id="slabs" className="part">
                     <h3>Mes dalles de sol</h3>
@@ -60,7 +60,7 @@ function CollectionPart() {
                         alt="Exemple de dalle en mosaïque"
                         className="demoPicture">
                     </img>
-                    <Link to='/slabs'><button className="goToCollection">Voir la collection</button></Link>
+                    <Link to='/collections/dalles'><button className="goToCollection">Voir la collection</button></Link>
                 </div>
                 <div id="houseNames" className="part">
                     <h3>Noms de maisons</h3>
@@ -69,7 +69,7 @@ function CollectionPart() {
                         alt="Exemple de nom de maison ou enseigne en mosaïque"
                         className="demoPicture">
                     </img>
-                    <Link to='/houseNames'><button className="goToCollection">Voir la collection</button></Link>
+                    <Link to='/collections/noms-de-maisons'><button className="goToCollection">Voir la collection</button></Link>
                 </div>
                 <div id="coatOfArms" className="part">
                     <h3>Blasons</h3>
@@ -78,7 +78,7 @@ function CollectionPart() {
                         alt="Exemple de blason en mosaïque"
                         className="demoPicture">
                     </img>
-                    <Link to='/coatOfArms'><button className="goToCollection">Voir la collection</button></Link>
+                    <Link to='/collections/blasons'><button className="goToCollection">Voir la collection</button></Link>
                 </div>
             </div>
         </div>
@@ -92,14 +92,14 @@ function WorkshopPart() {
             <h2 id='workshopPartTitle'>Apprenez la mosaïque</h2>
             <div id='workshopPart'>
                 <p id='workshopPartDescr'>Rejoignez mes ateliers pour apprendre la mosaïque rapidement.</p>
-                <Link to='workshops'>
+                <Link to='ateliers'>
                     <img
                         src='https://images.squarespace-cdn.com/content/v1/5bda08d0af2096886e0e1b1b/f8b9c2ce-74a2-4b26-9f91-f99505614be4/mosaic-puzzle-art-for-kids-children-s-creative-game-hands-are-playing-mosaic-at-table-colorful-multi-colored-details-close-up.jpg?format=1000w'
                         alt='Atelier de mosaïque'
                         id='mosaicWorkshopImg'>
                     </img>
                 </Link>
-                <Link to='workshops'><button id='workshopPartBtn' className="goToCollection">Je veux apprendre</button></Link>
+                <Link to='ateliers'><button id='workshopPartBtn' className="goToCollection">Je veux apprendre</button></Link>
             </div>
         </div>
     )
@@ -111,14 +111,14 @@ function EventPart() {
             <h2 id='eventPartTitle'>Nos expositions & événements</h2>
             <div id='eventPart'>
                 <p id='eventPartDescr'>Ne ratez pas les prochaines expositions et événements !</p>
-                <Link to='events'>
+                <Link to='événements'>
                     <img
                         src='https://www.ebmosaiques.com/ima2/afv1m.jpg'
                         alt='Atelier de mosaïque'
                         id='eventImg'>
                     </img>
                 </Link>
-                <Link to='events'><button id='eventPartBtn' className="goToCollection">Voir les événements</button></Link>
+                <Link to='événements'><button id='eventPartBtn' className="goToCollection">Voir les événements</button></Link>
             </div>
         </div>
     )
@@ -130,14 +130,14 @@ function OnTheNewsPart() {
             <h2 id='onTheNewsPartTitle'>Dans la presse</h2>
             <div id='onTheNewsPart'>
                 <p id='onTheNewsPartDescr'>Voici ce que disent les médias de mon travail.</p>
-                <Link to='onTheNews'>
+                <Link to='dans-la-presse'>
                     <img
                         src='https://fyooyzbm.filerobot.com/v7/protec/DATA_ART_7533144-uvHYlpF1.jpg?vh=441137&ci_seal=7639363e5b&w=1280&h=746&gravity=auto&func=crop'
                         alt='Atelier de mosaïque'
                         id='onTheNewsImg'>
                     </img>
                 </Link>
-                <Link to='onTheNews'><button id='onTheNewsPartBtn' className="goToCollection">Voir les reportages</button></Link>
+                <Link to='dans-la-presse'><button id='onTheNewsPartBtn' className="goToCollection">Voir les reportages</button></Link>
             </div>
         </div>
     )
@@ -157,4 +157,5 @@ function Parts() {
     )
 }
 
+export {CollectionPart}
 export default Parts

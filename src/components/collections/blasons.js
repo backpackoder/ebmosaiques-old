@@ -1,4 +1,4 @@
-function CoatOfArms() {
+function Blasons() {
     return (
         <>
         <p className="descrPart">
@@ -8,4 +8,4 @@ function CoatOfArms() {
     )
 }
 
-export default CoatOfArms
+export default Blasons

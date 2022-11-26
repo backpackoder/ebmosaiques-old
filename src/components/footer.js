@@ -12,16 +12,16 @@ function Footer({numberPhone, mailAdress}) {
                             <Link to='/' className="mainMenuMobileLiLink">Accueil</Link>
                         </li>
                         <li>
-                            <Link to='/whoami' className="mainMenuMobileLiLink">Qui suis-je ?</Link>
+                            <Link to='/qui-suis-je' className="mainMenuMobileLiLink">Qui suis-je ?</Link>
                         </li>
                         <li>
-                            <Link to='/workshops' className="mainMenuMobileLiLink">Ateliers</Link>
+                            <Link to='/ateliers' className="mainMenuMobileLiLink">Ateliers</Link>
                         </li>
                         <li>
-                            <Link to='/events' className="mainMenuMobileLiLink">Expos & événements</Link>
+                            <Link to='/événements' className="mainMenuMobileLiLink">Expos & événements</Link>
                         </li>
                         <li>
-                            <Link to='/onTheNews' className="mainMenuMobileLiLink">Dans la presse</Link>
+                            <Link to='/dans-la-presse' className="mainMenuMobileLiLink">Dans la presse</Link>
                         </li>
                     </ul>
                 </div>
@@ -30,22 +30,22 @@ function Footer({numberPhone, mailAdress}) {
                 <p className='footerColumnTitle'>Collections</p>
                     <ul className='footerUl grid-2'>
                         <li>
-                            <Link to='/clocks' className="mainMenuMobileLiLink">Pendules</Link>
+                            <Link to='/collections/horloges' className="mainMenuMobileLiLink">Horloges</Link>
                         </li>
                         <li>
-                            <Link to='/mirrors' className="mainMenuMobileLiLink">Miroirs</Link>
+                            <Link to='/collections/miroirs' className="mainMenuMobileLiLink">Miroirs</Link>
                         </li>
                         <li>
-                            <Link to='/paintingsAndDecorations' className="mainMenuMobileLiLink">Tableaux & décors</Link>
+                            <Link to='/collections/tableaux-et-décors' className="mainMenuMobileLiLink">Tableaux & décors</Link>
                         </li>
                         <li>
-                            <Link to='/slabs' className="mainMenuMobileLiLink">Dalles de sol</Link>
+                            <Link to='/collections/dalles' className="mainMenuMobileLiLink">Dalles de sol</Link>
                         </li>
                         <li>
-                            <Link to='/houseNames' className="mainMenuMobileLiLink">Noms de maisons</Link>
+                            <Link to='/collections/noms-de-maisons' className="mainMenuMobileLiLink">Noms de maisons</Link>
                         </li>
                         <li>
-                            <Link to='/coatOfArms' className="mainMenuMobileLiLink">Blasons</Link>
+                            <Link to='/collections/blasons' className="mainMenuMobileLiLink">Blasons</Link>
                         </li>
                     </ul>
                 </div>

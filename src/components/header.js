@@ -1,241 +1,386 @@
-import { useState } from "react"
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
 
-function MenuMobile({arrow, moveArrow, numberPhone, mailAdress}) {
+const numberPhone = "https://api.whatsapp.com/send?phone=0033608054065";
+const mailAdress = "mailto:edithbarbiera@aol.fr";
 
-const [scrolledMenu, setScrolledMenu] = useState(false)
-function scrollMenu() {
-    setScrolledMenu(!scrolledMenu)
-}
+const mesOeuvres = [
+  {
+    label: "Horloges",
+    to: "/collections/horloges",
+  },
+  {
+    label: "Miroirs",
+    to: "/collections/miroirs",
+  },
+  {
+    label: "Tableaux & décors",
+    to: "/collections/tableaux-et-décors",
+  },
+  {
+    label: "Dalles",
+    to: "/collections/dalles",
+  },
+  {
+    label: "Noms de maisons",
+    to: "/collections/noms-de-maisons",
+  },
+  {
+    label: "Blasons",
+    to: "/collections/blasons",
+  },
+];
 
+const mesCours = [
+  {
+    label: "Ateliers à domicile",
+    to: "/ateliers/à-domicile",
+  },
+  {
+    label: "Ateliers en ligne",
+    to: "/ateliers/en-ligne",
+  },
+];
+
+const réseauxSociaux = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/SospelAtelierEbmosaiques",
+    fa: <FaFacebook style={{ fontSize: "1rem", marginRight: "10px" }} />,
+  },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/ebmosaiques/",
+    fa: <FaInstagram style={{ fontSize: "1rem", marginRight: "10px" }} />,
+  },
+];
+
+const meContacter = [
+  {
+    label: "Téléphone",
+    href: numberPhone,
+    fa: <FaPhone style={{ fontSize: "1rem", marginRight: "15px" }} />,
+  },
+  {
+    label: "Mail",
+    href: mailAdress,
+    fa: <FaEnvelope style={{ fontSize: "1rem", marginRight: "15px" }} />,
+  },
+];
+
+function MenuItem({
+  menuTitle,
+  internLink,
+  subMenu,
+  index,
+  numberPhone,
+  mailAdress,
+  moveArrow,
+  selectedMenu,
+  scrollMenu,
+}) {
+  if (subMenu === null) {
     return (
-        <>
-        <div id="menuMobile" className={scrolledMenu ? 'active' : null}>
-        <div onClick={scrollMenu} id="scrollMenuBtn" className={scrolledMenu ? 'active' : null}></div>
-            <ul id="mainMenuMobile">
-                <Link to='/' onClick={scrollMenu}>
-                    <img
-                        src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png"
-                        alt="logo eb mosaiques"
-                        id="scrollMenuLogo">
-                    </img>
-                </Link>
-                <li onClick={scrollMenu}>
-                    <Link to='/'>Accueil</Link>
-                </li>
-                <li onClick={scrollMenu}>
-                    <Link to='/whoami'>Qui suis-je ?</Link>
-                </li>
-                <li onClick={moveArrow}>
-                    <span><span className="arrow">{arrow}</span> Mes œuvres</span>
-                    <ul className="subMenu">
-                        <li onClick={scrollMenu}>
-                            <Link to='/clocks'>Horloges</Link>
-                        </li>
-                        <li onClick={scrollMenu}>
-                            <Link to='/mirrors'>Miroirs</Link>
-                        </li>
-                        <li onClick={scrollMenu}>
-                            <Link to='/paintingsAndDecorations'>Tableaux & décors</Link>
-                        </li>
-                        <li onClick={scrollMenu}>
-                            <Link to='/slabs'>Dalles</Link>
-                        </li>
-                        <li onClick={scrollMenu}>
-                            <Link to='/houseNames'>Noms de maisons</Link>
-                        </li>
-                        <li onClick={scrollMenu}>
-                            <Link to='/coatOfArms'>Blasons</Link>
-                        </li>
-                    </ul>
-                </li>
-                <li onClick={moveArrow}>
-                    <span><span className="arrow">{arrow}</span> Mes cours</span>
-                    <ul className="subMenu">
-                        <li onClick={scrollMenu}>
-                            <Link to='/workshops/faceToFace'>Ateliers à domicile</Link>
-                        </li>
-                        <li onClick={scrollMenu}>
-                        <Link to='/workshops/online'>Ateliers en ligne</Link>
-                        </li>
-                    </ul>
-                </li>
-                <li onClick={scrollMenu}>
-                    <Link to='/events'>Expos & événements</Link>
-                </li>
-                <li onClick={moveArrow}>
-                    <span><span className="arrow">{arrow}</span> Réseaux sociaux</span>
-                    <ul className="subMenu">
-                        <li>
-                            <a href="https://www.facebook.com/SospelAtelierEbmosaiques">
-                                <FaFacebook style={{fontSize: "1rem", marginRight: "10px"}} />
-                                Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/ebmosaiques/">
-                                <FaInstagram style={{fontSize: "1rem", marginRight: "10px"}} />
-                                Instagram
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li onClick={moveArrow}>
-                    <span><span className="arrow">{arrow}</span> Me contacter</span>
-                    <ul className="subMenu">
-                        <li>
-                            <a href={numberPhone}>
-                                <FaPhone style={{fontSize: "1rem", marginRight: "15px"}} />
-                                Téléphone
-                            </a>
-                        </li>
-                        <li>
-                            <a href={mailAdress}>
-                                <FaEnvelope style={{fontSize: "1rem", marginRight: "15px"}} />
-                                Mail
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li onClick={scrollMenu}>
-                    <Link to='/onTheNews'>Dans la presse</Link>
-                </li>
-            </ul>
-        </div>
-        </>
-    )
-}
-
-function MenuDesktop({numberPhone, mailAdress}) {
+      <li onClick={scrollMenu}>
+        <Link to={internLink}>{menuTitle}</Link>
+      </li>
+    );
+  } else if (subMenu === réseauxSociaux || subMenu === meContacter) {
     return (
-        <>
-        <div id="menuDesktop">
-            <ul id="mainMenuDesktop">
-                <li>
-                    <Link to='/'>Accueil</Link>
-                </li>
-                <li>
-                    <Link to='/whoami'>Qui suis-je ?</Link>
-                </li>
-                <li>
-                    <Link to='collections'>Mes œuvres</Link>
-                    <ul className="subMenu">
-                        <li>
-                            <Link to='/clocks'>Horloges</Link>
-                        </li>
-                        <li>
-                            <Link to='/mirrors'>Miroirs</Link>
-                        </li>
-                        <li>
-                            <Link to='/paintingsAndDecorations'>Tableaux & décors</Link>
-                        </li>
-                        <li>
-                            <Link to='/slabs'>Dalles de sol</Link>
-                        </li>
-                        <li>
-                            <Link to='/houseNames'>Noms de maisons</Link>
-                        </li>
-                        <li>
-                            <Link to='/coatOfArms'>Blasons</Link>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                <Link to='workshops'>Mes cours</Link>
-                    <ul className="subMenu">
-                        <li>
-                            <Link to='/workshops/faceToFace'>Ateliers à domicile</Link>
-                        </li>
-                        <li>
-                        <Link to='/workshops/online'>Ateliers en ligne</Link>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <Link to='/events'>Expos & événements</Link>
-                </li>
-                <li>
-                    Réseaux sociaux
-                    <ul className="subMenu">
-                        <li>
-                            <a href="https://www.facebook.com/SospelAtelierEbmosaiques">
-                                <FaFacebook style={{fontSize: "1rem", marginRight: "10px"}} />
-                                Facebook
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.instagram.com/ebmosaiques/">
-                                <FaInstagram style={{fontSize: "1rem", marginRight: "10px"}} />
-                                Instagram
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    Me contacter
-                    <ul className="subMenu">
-                        <li>
-                            <a href={numberPhone}>
-                                <FaPhone style={{fontSize: "1rem", marginRight: "15px"}} />
-                                Téléphone
-                            </a>
-                        </li>
-                        <li>
-                            <a href={mailAdress}>
-                                <FaEnvelope style={{fontSize: "1rem", marginRight: "15px"}} />
-                                Mail
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <Link to='/onTheNews'>Dans la presse</Link>
-                </li>
-            </ul>
-        </div>
-        </>
-    )
-}
-
-function Header() {
-
-const [arrow, setArrow] = useState("▶")
-function moveArrow() {
-    return setArrow(() => {
-        if (arrow === "▶") {
-            setArrow("▼")
-        } else {
-            setArrow("▶")
-        }
-    })
-}
-
+      <li onMouseOver={() => moveArrow(index)}>
+        <span>
+          <span className="arrow">{selectedMenu === index ? "▼" : "▶"}</span>
+          <Link to={internLink}>{menuTitle}</Link>
+        </span>
+        <SubMenuItem
+          scrollMenu={scrollMenu}
+          subMenu={subMenu}
+          index={index}
+          numberPhone={numberPhone}
+          mailAdress={mailAdress}
+          selectedMenu={selectedMenu}
+        />
+      </li>
+    );
+  } else {
     return (
+      <li onMouseOver={() => moveArrow(index)}>
+        <span>
+          <span className="arrow">{selectedMenu === index ? "▼" : "▶"}</span>
+          <Link to={internLink}>{menuTitle}</Link>
+        </span>
+
+        <SubMenuItem scrollMenu={scrollMenu} subMenu={subMenu} index={index} selectedMenu={selectedMenu} />
+      </li>
+    );
+  }
+}
+
+function SubMenuItem({ subMenu, scrollMenu, selectedMenu, index }) {
+  if (subMenu === réseauxSociaux || subMenu === meContacter) {
+    return (
+      <ul className={selectedMenu === index ? "subMenu active" : "subMenu"}>
+        {subMenu.map((item, index) => (
+          <li key={index} onClick={scrollMenu}>
+            <a href={item.href}>
+              {item.fa} {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    );
+  } else {
+    return (
+      <ul className={selectedMenu === index ? "subMenu active" : "subMenu"}>
+        {subMenu.map((item, index) => (
+          <li key={index} onClick={scrollMenu}>
+            <Link to={item.to}>{item.label}</Link>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+}
+
+function MenuMobile({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
+  const [scrolledMenu, setScrolledMenu] = useState(false);
+  function scrollMenu() {
+    setScrolledMenu(!scrolledMenu);
+  }
+
+  return (
+    <div id="menuMobile" className={scrolledMenu ? "active" : null}>
+      <div
+        onClick={scrollMenu}
+        id="scrollMenuBtn"
+        className={scrolledMenu ? "active" : null}
+      ></div>
+
+      <Link to="/" onClick={scrollMenu}>
+        <img
+          src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png"
+          alt="logo eb mosaiques"
+          id="scrollMenuLogo"
+        ></img>
+      </Link>
+
+      <ul id="mainMenuMobile">
+        <MenuItem
+          menuTitle={"Accueil"}
+          internLink={"/"}
+          subMenu={null}
+          moveArrow={null}
+          selectedMenu={null}
+          scrollMenu={scrollMenu}
+        />
+
+        <MenuItem
+          menuTitle={"Qui suis-je ?"}
+          internLink={"qui-suis-je"}
+          subMenu={null}
+          moveArrow={null}
+          selectedMenu={null}
+          scrollMenu={scrollMenu}
+        />
+
+        <MenuItem
+          menuTitle={"Mes oeuvres"}
+          internLink={null}
+          subMenu={mesOeuvres}
+          moveArrow={moveArrow}
+          selectedMenu={selectedMenu}
+          scrollMenu={scrollMenu}
+          index={0}
+        />
+
+        <MenuItem
+          menuTitle={"Mes cours"}
+          internLink={null}
+          subMenu={mesCours}
+          moveArrow={moveArrow}
+          selectedMenu={selectedMenu}
+          scrollMenu={scrollMenu}
+          index={1}
+        />
+
+        <MenuItem
+          menuTitle={"Expos & événements"}
+          internLink={"/événements"}
+          subMenu={null}
+          moveArrow={null}
+          selectedMenu={null}
+          scrollMenu={scrollMenu}
+        />
+
+        <MenuItem
+          menuTitle={"Réseaux sociaux"}
+          internLink={null}
+          subMenu={réseauxSociaux}
+          numberPhone={numberPhone}
+          mailAdress={mailAdress}
+          moveArrow={moveArrow}
+          selectedMenu={selectedMenu}
+          scrollMenu={scrollMenu}
+          index={2}
+        />
+
+        <MenuItem
+          menuTitle={"Me contacter"}
+          internLink={null}
+          subMenu={meContacter}
+          numberPhone={numberPhone}
+          mailAdress={mailAdress}
+          moveArrow={moveArrow}
+          selectedMenu={selectedMenu}
+          scrollMenu={scrollMenu}
+          index={3}
+        />
+
+        <MenuItem
+          menuTitle={"Dans la presse"}
+          internLink={"dans-la-presse"}
+          subMenu={null}
+          moveArrow={null}
+          selectedMenu={null}
+          scrollMenu={scrollMenu}
+        />
+      </ul>
+    </div>
+  );
+}
+
+function MenuDesktop({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
+  return (
     <>
-    <div id="topHeader"></div>
-    <div id="header">
-        <h1><Link to='/' id="h1">GALERIE EB MOSAIQUES</Link></h1>
+      <div id="menuDesktop">
+        <ul id="mainMenuDesktop">
+          <MenuItem
+            menuTitle={"Accueil"}
+            internLink={"/"}
+            subMenu={null}
+            moveArrow={null}
+            selectedMenu={null}
+          />
 
-        <MenuMobile arrow={arrow} moveArrow={moveArrow} />
+          <MenuItem
+            menuTitle={"Qui suis-je ?"}
+            internLink={"qui-suis-je"}
+            subMenu={null}
+            moveArrow={null}
+            selectedMenu={null}
+          />
+
+          <MenuItem
+            menuTitle={"Mes oeuvres"}
+            internLink={"/collections"}
+            subMenu={mesOeuvres}
+            moveArrow={moveArrow}
+            selectedMenu={selectedMenu}
+            index={0}
+          />
+
+          <MenuItem
+            menuTitle={"Mes cours"}
+            internLink={"/ateliers"}
+            subMenu={mesCours}
+            moveArrow={moveArrow}
+            selectedMenu={selectedMenu}
+            index={1}
+          />
+
+          <MenuItem
+            menuTitle={"Expos & événements"}
+            internLink={"/événements"}
+            subMenu={null}
+            moveArrow={null}
+            selectedMenu={null}
+          />
+
+          <MenuItem
+            menuTitle={"Réseaux sociaux"}
+            internLink={null}
+            subMenu={réseauxSociaux}
+            numberPhone={numberPhone}
+            mailAdress={mailAdress}
+            moveArrow={moveArrow}
+            selectedMenu={selectedMenu}
+            index={2}
+          />
+
+          <MenuItem
+            menuTitle={"Me contacter"}
+            internLink={null}
+            subMenu={meContacter}
+            numberPhone={numberPhone}
+            mailAdress={mailAdress}
+            moveArrow={moveArrow}
+            selectedMenu={selectedMenu}
+            index={3}
+          />
+
+          <MenuItem
+            menuTitle={"Dans la presse"}
+            internLink={"dans-la-presse"}
+            subMenu={null}
+            moveArrow={null}
+            selectedMenu={null}
+          />
+        </ul>
+      </div>
+    </>
+  );
+}
+
+function Header({ numberPhone, mailAdress }) {
+  const [arrow, setArrow] = useState("▶");
+  const [selectedMenu, setSelectedMenu] = useState();
+
+  function moveArrow(e) {
+    setSelectedMenu(e);
+    setArrow(e.arrow === "▶" ? "▼" : "▶");
+  }
+
+  return (
+    <>
+      <div id="topHeader"></div>
+      <div id="header">
+        <h1>
+          <Link to="/" id="h1">
+            GALERIE EB MOSAIQUES
+          </Link>
+        </h1>
+
+        <MenuMobile
+          numberPhone={numberPhone}
+          mailAdress={mailAdress}
+          arrow={arrow}
+          moveArrow={moveArrow}
+          selectedMenu={selectedMenu}
+        />
 
         <div id="bottomHeader">
-            <p  className="subTitle">Edith BARBIERA</p>
-            <Link to='/'>
-                <img
-                    src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png"
-                    alt="Logo EB Mosaiques"
-                    id="headerLogo">
-                </img>
-            </Link>
-            <p className="subTitle">Artiste mosaïste</p>
+          <p className="subTitle">Edith BARBIERA</p>
+          <Link to="/">
+            <img
+              src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png"
+              alt="Logo EB Mosaiques"
+              id="headerLogo"
+            ></img>
+          </Link>
+          <p className="subTitle">Artiste mosaïste</p>
         </div>
 
-        <MenuDesktop arrow={arrow} moveArrow={moveArrow} />
-
-    </div>
+        <MenuDesktop
+          numberPhone={numberPhone}
+          mailAdress={mailAdress}
+          arrow={arrow}
+          moveArrow={moveArrow}
+          selectedMenu={selectedMenu}
+        />
+      </div>
     </>
-    )
+  );
 }
 
-export default Header
+export default Header;

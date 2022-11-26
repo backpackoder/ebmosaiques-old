@@ -6,28 +6,28 @@ import Header from './components/header';
 import Footer from './components/footer';
 
 // Homepage
-import Homepage from './components/homepage';
+import Homepage from './components/homepage/homepage';
 
 // Sections
-import WhoAmI from './components/sections/whoami';
+import QuiSuisJe from './components/sections/quiSuisJe';
 
-import Collections from './components/sections/collections/collections';
+import Collections from './components/collections/collections';
 
-import Workshops from './components/sections/workshops/workshops';
-import FaceToFace from './components/sections/workshops/faceToFace';
-import Online from './components/sections/workshops/online';
+import Ateliers from './components/sections/ateliers/ateliers';
+import ÀDomicile from './components/sections/ateliers/àDomicile';
+import EnLigne from './components/sections/ateliers/enLigne';
 
-import Events from './components/sections/events/events';
+import Événements from './components/sections/événements';
 
-import OnTheNews from './components/sections/onTheNews';
+import DansLaPresse from './components/sections/dansLaPresse';
 
 // Collections
-import Clocks from './components/collections/clocks';
-import Mirrors from './components/collections/mirrors';
-import PaintingsAndDecorations from './components/collections/paintingsAndDecorations';
-import Slabs from './components/collections/slabs';
-import HouseNames from './components/collections/houseNames';
-import CoatOfArms from './components/collections/coatOfArms';
+import Horloges from './components/collections/horloges';
+import Miroirs from './components/collections/miroirs';
+import TableauxEtDécors from './components/collections/tableauxEtDécors';
+import Dalles from './components/collections/dalles';
+import NomsDeMaisons from './components/collections/nomsDeMaisons';
+import Blasons from './components/collections/blasons';
 
 function App() {
   const numberPhone = "https://api.whatsapp.com/send?phone=0033608054065";
@@ -35,28 +35,31 @@ function App() {
   
   return (
     <div className="App">
-      <Header />
+      <Header
+        numberPhone={numberPhone}
+        mailAdress={mailAdress}
+      />
       <Routes>
         {/* Homepage */}
         <Route path='/' element={<Homepage />} />
         
         {/* Sections */}
-        <Route path='/whoami' element={<WhoAmI />} />
-        <Route path='/collections' element={<Collections />} />
-        <Route path='/workshops' element={<Workshops />}>
-          <Route path='/workshops/faceToFace' element={<FaceToFace />} />
-          <Route path='/workshops/online' element={<Online />} />
+        <Route path='/qui-suis-je' element={<QuiSuisJe />} />
+        <Route path='/collections' element={<Collections />}>
+          {/* Collections */}
+          <Route path='/collections/horloges' element={<Horloges />} />
+          <Route path='/collections/miroirs' element={<Miroirs />} />
+          <Route path='/collections/tableaux-et-décors' element={<TableauxEtDécors />} />
+          <Route path='/collections/dalles' element={<Dalles />} />
+          <Route path='/collections/noms-de-maisons' element={<NomsDeMaisons />} />
+          <Route path='/collections/blasons' element={<Blasons />} />
         </Route>
-        <Route path='/events' element={<Events />} />
-        <Route path='/onTheNews' element={<OnTheNews />} />
-
-        {/* Collections */}
-        <Route path='/clocks' element={<Clocks />} />
-        <Route path='/mirrors' element={<Mirrors />} />
-        <Route path='/paintingsAndDecorations' element={<PaintingsAndDecorations />} />
-        <Route path='/slabs' element={<Slabs />} />
-        <Route path='/houseNames' element={<HouseNames />} />
-        <Route path='/coatOfArms' element={<CoatOfArms />} />
+        <Route path='/ateliers' element={<Ateliers />}>
+          <Route path='/ateliers/à-domicile' element={<ÀDomicile />} />
+          <Route path='/ateliers/en-ligne' element={<EnLigne />} />
+        </Route>
+        <Route path='/événements' element={<Événements />} />
+        <Route path='/dans-la-presse' element={<DansLaPresse />} />
       </Routes>
       <Footer
         numberPhone={numberPhone}
@@ -66,4 +69,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

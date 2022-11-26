@@ -1,4 +1,4 @@
-import Parts from "./homepage/Parts"
+import Parts from "./Parts"
 
 function Homepage() {
     return (

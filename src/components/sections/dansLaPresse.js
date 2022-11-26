@@ -1,4 +1,4 @@
-function OnTheNews() {
+function DansLaPresse() {
     return (
         <>
         <h2>Liste des articles</h2>
@@ -35,4 +35,4 @@ function OnTheNews() {
     )
 }
 
-export default OnTheNews
+export default DansLaPresse

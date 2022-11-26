@@ -67,6 +67,7 @@ h3 {
     border-radius: 5px;
     margin: 20px 0 15px;
     box-shadow: 0px 2px 5px 1px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
 }
 
 /* Workshops */
@@ -144,6 +145,25 @@ h3 {
     margin: 10px 0;
 }
 
+hr {
+    margin: 0 50px;
+}
+
+#collectionNav {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+#collectionNav > * {
+    font-weight: 700;
+    padding: 5px;
+    margin: 0 10px;
+}
+
 @media (min-width: 601px) {
     /* Collections */
     #collectionParts {
@@ -168,6 +188,28 @@ h3 {
     #individualPartsInRow {
         display: grid;
         grid-template-areas: "grid1 grid2" "grid3 grid3";
+    }
+    
+    #collectionNav {
+        grid-template-columns: repeat(3, auto);
+        text-align: center;
+    }
+}
+
+@media (min-width: 701px) {
+    #collectionNav {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #collectionNav > *::after {
+        content: "";
+        position: relative;
+        left: 20px;
+        height: 100%;
+        border-right: solid 1px #000;
+    }
+    #collectionNav > *:last-child::after {
+        border-right: none;
     }
 }
 

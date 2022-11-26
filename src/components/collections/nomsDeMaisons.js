@@ -1,4 +1,4 @@
-function HouseNames() {
+function NomsDeMaisons() {
     return (
         <>
         <p className="descrPart">
@@ -8,4 +8,4 @@ function HouseNames() {
     )
 }
 
-export default HouseNames
+export default NomsDeMaisons

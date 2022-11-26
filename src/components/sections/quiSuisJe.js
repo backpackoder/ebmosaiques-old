@@ -1,4 +1,4 @@
-function WhoAmI() {
+function QuiSuisJe() {
     return (
         <>
         <h2>Qui suis-je ?</h2>
@@ -33,4 +33,4 @@ function WhoAmI() {
     )
 }
 
-export default WhoAmI
+export default QuiSuisJe

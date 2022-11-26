@@ -9,13 +9,13 @@
 
 /* Sections */
   /* Who am I */
-  @import './css files/whoAmI.css';
+  @import './css files/quiSuisJe.css';
 
   /* Workshops */
-  @import './css files/workshops.css';
+  @import './css files/ateliers.css';
 
   /* Events */
-  @import './css files/events.css';
+  @import './css files/événements.css';
   
   /* Ont the news */
-  @import './css files/onTheNews.css';
+  @import './css files/dansLaPresse.css';

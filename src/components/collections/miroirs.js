@@ -1,4 +1,4 @@
-function Mirrors() {
+function Miroirs() {
     return (
         <>
         <p className="descrPart">
@@ -8,4 +8,4 @@ function Mirrors() {
     )
 }
 
-export default Mirrors
+export default Miroirs

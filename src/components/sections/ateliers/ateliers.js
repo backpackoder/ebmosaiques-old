@@ -1,6 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
 
-function Workshops() {
+function Ateliers() {
     return (
         <>
         <h2>Mes ateliers</h2>
@@ -17,7 +17,7 @@ function Workshops() {
         <div id='workshopsWrapper'>
             <div className='workshop faceToFace'>
                 <h3 className='workshopType'>Ateliers à domicile</h3>
-                <Link to='/workshops/faceToFace'>
+                <Link to='/ateliers/à-domicile'>
                     <img
                         src="https://recreanice.fr/sites/default/files/node_images/mosaique.jpg"
                         alt="Cours à domicile"
@@ -28,7 +28,7 @@ function Workshops() {
 
             <div className='workshop online'>
                 <h3 className='workshopType'>Ateliers en ligne</h3>
-                <Link to='/workshops/online'>
+                <Link to='/ateliers/en-ligne'>
                     <img
                         src="https://images.pexels.com/photos/733856/pexels-photo-733856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         alt="Cours en ligne"
@@ -43,4 +43,4 @@ function Workshops() {
     )
 }
 
-export default Workshops
+export default Ateliers

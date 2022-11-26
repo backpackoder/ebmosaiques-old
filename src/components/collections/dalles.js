@@ -1,4 +1,4 @@
-function Slabs() {
+function Dalles() {
     return (
         <>
         <p className="descrPart">
@@ -8,4 +8,4 @@ function Slabs() {
     )
 }
 
-export default Slabs
+export default Dalles
