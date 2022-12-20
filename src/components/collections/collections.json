@@ -1,0 +1,26 @@
+{
+  "Horloges": {
+    "nom": "Horloges",
+    "description": "À suspendre ou à poser, créer des horloges et des pendules originales et uniques est ma spécialité."
+  },
+  "Miroirs": {
+    "nom": "Miroirs",
+    "description": "J'enjolie les miroirs en décorant leur cadre avec ma mosaïque."
+  },
+  "TableauxEtDécors": {
+    "nom": "Tableaux et décors",
+    "description": "Découvrez ma grande collection de tableaux et arts décoratifs, en passant par les portraits, la faune, la flore, et des fresques en tout genre..."
+  },
+  "Dalles": {
+    "nom": "Dalles",
+    "description": "Je crée aussi des dalles de sol pour votre terasse ou votre jardin."
+  },
+  "NomsDeMaisons": {
+    "nom": "Noms de maisons",
+    "description": "Commandez votre plaque personnalisée avec le nom de votre maison !"
+  },
+  "Blasons": {
+    "nom": "Blasons",
+    "description": "Une collection de blasons de famille ou de commune pour les plus chauvins."
+  }
+}

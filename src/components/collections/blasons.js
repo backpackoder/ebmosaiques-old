@@ -1,11 +1,13 @@
+import collectionJSON from "./collections.json";
+import { BlasonsWithCollection } from "./HOCCollections";
+
 function Blasons() {
-    return (
-        <>
-        <p className="descrPart">
-            Une collection de blasons de famille ou de commune pour les plus chauvins.
-        </p>
-        </>
-    )
+  return (
+    <>
+      <p className="descrPart">{collectionJSON.Blasons.description}</p>
+      <BlasonsWithCollection />
+    </>
+  );
 }
 
-export default Blasons
+export default Blasons;

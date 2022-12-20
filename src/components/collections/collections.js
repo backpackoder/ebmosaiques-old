@@ -1,29 +1,29 @@
-import { Link, Outlet } from 'react-router-dom';
-
-import { CollectionPart } from '../homepage/Parts';
+import { Link, Outlet } from "react-router-dom";
+import { CollectionPart } from "../homepage/Parts";
+import CollectionJSON from "./collections.json";
 
 function Collections() {
-    return (
-        <>
-        <div style={{backgroundColor: "lightblue"}}>
-            <p style={{textAlign: "center", textDecoration: "underline"}}>Liste des collections :</p>
-            <nav id='collectionNav'>
-                <Link to="/collections/horloges">Horloges</Link>
-                <Link to="/collections/mirroirs">Miroirs</Link>
-                <Link to="/collections/tableaux-et-décorations">Tableaux & décors</Link>
-                <Link to="/collections/dalles">Dalles</Link>
-                <Link to="/collections/noms-de-maisons">Noms de maisons</Link>
-                <Link to="/collections/blasons">Blasons</Link>
-            </nav>
-        </div>
-        
-        <Outlet />
-        
-        <hr />
+  return (
+    <>
+      <div id="collectionNavWrapper">
+        <nav id="collectionNav">
+          <Link to="/collections">Voir la liste</Link>
+          <Link to="/collections/horloges">{CollectionJSON.Horloges.nom}</Link>
+          <Link to="/collections/miroirs">{CollectionJSON.Miroirs.nom}</Link>
+          <Link to="/collections/tableaux-et-décors">{CollectionJSON.TableauxEtDécors.nom}</Link>
+          <Link to="/collections/dalles">{CollectionJSON.Dalles.nom}</Link>
+          <Link to="/collections/noms-de-maisons">{CollectionJSON.NomsDeMaisons.nom}</Link>
+          <Link to="/collections/blasons">{CollectionJSON.Blasons.nom}</Link>
+        </nav>
+      </div>
 
-        <CollectionPart />
-        </>
-    )
+      <Outlet />
+
+      <hr />
+
+      <CollectionPart />
+    </>
+  );
 }
 
-export default Collections
+export default Collections;

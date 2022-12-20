@@ -1,11 +1,16 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaEnvelope, FaPhone } from "react-icons/fa";
+import { CheckBoxMode } from "../App";
 
 const numberPhone = "https://api.whatsapp.com/send?phone=0033608054065";
 const mailAdress = "mailto:edithbarbiera@aol.fr";
 
 const mesOeuvres = [
+  {
+    label: "Liste des collections",
+    to: "/collections",
+  },
   {
     label: "Horloges",
     to: "/collections/horloges",
@@ -69,17 +74,7 @@ const meContacter = [
   },
 ];
 
-function MenuItem({
-  menuTitle,
-  internLink,
-  subMenu,
-  index,
-  numberPhone,
-  mailAdress,
-  moveArrow,
-  selectedMenu,
-  scrollMenu,
-}) {
+function MenuItem({ menuTitle, internLink, subMenu, index, moveArrow, selectedMenu, scrollMenu }) {
   if (subMenu === null) {
     return (
       <li onClick={scrollMenu}>
@@ -135,7 +130,9 @@ function SubMenuItem({ subMenu, scrollMenu, selectedMenu, index }) {
       <ul className={selectedMenu === index ? "subMenu active" : "subMenu"}>
         {subMenu.map((item, index) => (
           <li key={index} onClick={scrollMenu}>
-            <Link to={item.to}>{item.label}</Link>
+            <Link to={item.to}>
+              {item.label === "Liste des collections" ? <span style={{ fontWeight: "bold" }}>{item.label}</span> : item.label}
+            </Link>
           </li>
         ))}
       </ul>
@@ -143,7 +140,7 @@ function SubMenuItem({ subMenu, scrollMenu, selectedMenu, index }) {
   }
 }
 
-function MenuMobile({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
+function MenuMobile({ moveArrow, selectedMenu }) {
   const [scrolledMenu, setScrolledMenu] = useState(false);
   function scrollMenu() {
     setScrolledMenu(!scrolledMenu);
@@ -151,29 +148,14 @@ function MenuMobile({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
 
   return (
     <div id="menuMobile" className={scrolledMenu ? "active" : null}>
-      <div
-        onClick={scrollMenu}
-        id="scrollMenuBtn"
-        className={scrolledMenu ? "active" : null}
-      ></div>
+      <div onClick={scrollMenu} id="scrollMenuBtn" className={scrolledMenu ? "active" : null}></div>
 
       <Link to="/" onClick={scrollMenu}>
-        <img
-          src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png"
-          alt="logo eb mosaiques"
-          id="scrollMenuLogo"
-        ></img>
+        <img src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png" alt="logo eb mosaiques" id="scrollMenuLogo"></img>
       </Link>
 
       <ul id="mainMenuMobile">
-        <MenuItem
-          menuTitle={"Accueil"}
-          internLink={"/"}
-          subMenu={null}
-          moveArrow={null}
-          selectedMenu={null}
-          scrollMenu={scrollMenu}
-        />
+        <MenuItem menuTitle={"Accueil"} internLink={"/"} subMenu={null} moveArrow={null} selectedMenu={null} scrollMenu={scrollMenu} />
 
         <MenuItem
           menuTitle={"Qui suis-je ?"}
@@ -217,8 +199,6 @@ function MenuMobile({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
           menuTitle={"Réseaux sociaux"}
           internLink={null}
           subMenu={réseauxSociaux}
-          numberPhone={numberPhone}
-          mailAdress={mailAdress}
           moveArrow={moveArrow}
           selectedMenu={selectedMenu}
           scrollMenu={scrollMenu}
@@ -229,8 +209,6 @@ function MenuMobile({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
           menuTitle={"Me contacter"}
           internLink={null}
           subMenu={meContacter}
-          numberPhone={numberPhone}
-          mailAdress={mailAdress}
           moveArrow={moveArrow}
           selectedMenu={selectedMenu}
           scrollMenu={scrollMenu}
@@ -250,26 +228,14 @@ function MenuMobile({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
   );
 }
 
-function MenuDesktop({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
+function MenuDesktop({ moveArrow, selectedMenu }) {
   return (
     <>
       <div id="menuDesktop">
         <ul id="mainMenuDesktop">
-          <MenuItem
-            menuTitle={"Accueil"}
-            internLink={"/"}
-            subMenu={null}
-            moveArrow={null}
-            selectedMenu={null}
-          />
+          <MenuItem menuTitle={"Accueil"} internLink={"/"} subMenu={null} moveArrow={null} selectedMenu={null} />
 
-          <MenuItem
-            menuTitle={"Qui suis-je ?"}
-            internLink={"qui-suis-je"}
-            subMenu={null}
-            moveArrow={null}
-            selectedMenu={null}
-          />
+          <MenuItem menuTitle={"Qui suis-je ?"} internLink={"qui-suis-je"} subMenu={null} moveArrow={null} selectedMenu={null} />
 
           <MenuItem
             menuTitle={"Mes oeuvres"}
@@ -289,20 +255,12 @@ function MenuDesktop({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
             index={1}
           />
 
-          <MenuItem
-            menuTitle={"Expos & événements"}
-            internLink={"/événements"}
-            subMenu={null}
-            moveArrow={null}
-            selectedMenu={null}
-          />
+          <MenuItem menuTitle={"Expos & événements"} internLink={"/événements"} subMenu={null} moveArrow={null} selectedMenu={null} />
 
           <MenuItem
             menuTitle={"Réseaux sociaux"}
             internLink={null}
             subMenu={réseauxSociaux}
-            numberPhone={numberPhone}
-            mailAdress={mailAdress}
             moveArrow={moveArrow}
             selectedMenu={selectedMenu}
             index={2}
@@ -312,27 +270,19 @@ function MenuDesktop({ moveArrow, selectedMenu, numberPhone, mailAdress }) {
             menuTitle={"Me contacter"}
             internLink={null}
             subMenu={meContacter}
-            numberPhone={numberPhone}
-            mailAdress={mailAdress}
             moveArrow={moveArrow}
             selectedMenu={selectedMenu}
             index={3}
           />
 
-          <MenuItem
-            menuTitle={"Dans la presse"}
-            internLink={"dans-la-presse"}
-            subMenu={null}
-            moveArrow={null}
-            selectedMenu={null}
-          />
+          <MenuItem menuTitle={"Dans la presse"} internLink={"dans-la-presse"} subMenu={null} moveArrow={null} selectedMenu={null} />
         </ul>
       </div>
     </>
   );
 }
 
-function Header({ numberPhone, mailAdress }) {
+function Header() {
   const [arrow, setArrow] = useState("▶");
   const [selectedMenu, setSelectedMenu] = useState();
 
@@ -343,42 +293,26 @@ function Header({ numberPhone, mailAdress }) {
 
   return (
     <>
-      <div id="topHeader"></div>
-      <div id="header">
-        <h1>
-          <Link to="/" id="h1">
-            GALERIE EB MOSAIQUES
-          </Link>
-        </h1>
-
-        <MenuMobile
-          numberPhone={numberPhone}
-          mailAdress={mailAdress}
-          arrow={arrow}
-          moveArrow={moveArrow}
-          selectedMenu={selectedMenu}
-        />
-
-        <div id="bottomHeader">
-          <p className="subTitle">Edith BARBIERA</p>
+      <header>
+        <MenuMobile numberPhone={numberPhone} mailAdress={mailAdress} arrow={arrow} moveArrow={moveArrow} selectedMenu={selectedMenu} />
+        <CheckBoxMode />
+        <div id="topHeader">
           <Link to="/">
-            <img
-              src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png"
-              alt="Logo EB Mosaiques"
-              id="headerLogo"
-            ></img>
+            <img src="https://cdn.pixabay.com/photo/2013/07/12/17/20/leaf-152047_960_720.png" alt="Logo EB Mosaiques" id="headerLogo"></img>
           </Link>
-          <p className="subTitle">Artiste mosaïste</p>
         </div>
+      </header>
 
-        <MenuDesktop
-          numberPhone={numberPhone}
-          mailAdress={mailAdress}
-          arrow={arrow}
-          moveArrow={moveArrow}
-          selectedMenu={selectedMenu}
-        />
+      <div id="fixedHeader">
+        <div id="bottomHeader">
+          <p className="bottomHeaderSubTitle">Edith BARBIERA</p>
+          <Link to="/">
+            <h1>GALERIE EB MOSAIQUES</h1>
+          </Link>
+          <p className="bottomHeaderSubTitle">Artiste mosaïste</p>
+        </div>
       </div>
+      <MenuDesktop numberPhone={numberPhone} mailAdress={mailAdress} arrow={arrow} moveArrow={moveArrow} selectedMenu={selectedMenu} />
     </>
   );
 }

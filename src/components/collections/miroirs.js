@@ -1,11 +1,13 @@
+import collectionJSON from "./collections.json";
+import { MiroirsWithCollection } from "./HOCCollections";
+
 function Miroirs() {
-    return (
-        <>
-        <p className="descrPart">
-            J'enjolie les miroirs en décorant leur cadre avec ma mosaïque.
-        </p>
-        </>
-    )
+  return (
+    <>
+      <p className="descrPart">{collectionJSON.Miroirs.description}</p>
+      <MiroirsWithCollection />
+    </>
+  );
 }
 
-export default Miroirs
+export default Miroirs;

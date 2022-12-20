@@ -1,0 +1,121 @@
+/* Liste des collections avec JSON */
+.collectionRow {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  justify-content: space-evenly;
+}
+.collectionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 300px;
+  height: 450px;
+  background-color: bisque;
+  text-align: center;
+  padding: 0 10px;
+  border-radius: 10px;
+  margin: 0 15px 25px;
+}
+.collectionItemPresentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+  /* border: solid; */
+}
+.collectionItem > h3 {
+  display: flex;
+  align-items: center;
+  min-height: 15%;
+  font-size: 1.2rem;
+}
+.collectionItemDimensions {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.collectionItemImgContainer {
+  max-width: 100%;
+  max-height: 100%;
+}
+.collectionItemImgContainer.itemSold {
+  position: relative;
+}
+.collectionItemImgContainer.itemSold::before {
+  content: "vendu";
+  position: absolute;
+  top: 10%;
+  right: -10%;
+  transform: rotateZ(50deg);
+  background-color: rgba(255, 0, 0, 0.8);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  padding: 0 5px;
+}
+.collectionItemImgContainer > img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.collectionItemInfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30%;
+}
+.collectionItemDescr {
+  max-height: 100px;
+  overflow-y: scroll;
+  text-align: justify;
+  padding: 0 5px;
+}
+.collectionItemPrice {
+  background-color: lightgreen;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+.collectionItemPrice > span {
+  font-weight: bold;
+}
+
+/* .collectionItemDetails {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: space-between;
+    font-size: 0.8rem;
+} */
+
+@media (min-width: 501px) {
+  .collectionRow {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 701px) {
+  .collectionRow {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 901px) {
+  .collectionRow {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1024px) {
+  .collectionRow {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+  }
+}

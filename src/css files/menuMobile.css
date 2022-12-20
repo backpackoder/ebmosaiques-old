@@ -1,112 +1,112 @@
 .subMenu > li > a:hover {
-    color: #fcbb2b;
+  color: #fcbb2b;
 }
 
 @media (max-width: 600px) {
-    /* The button that makes scroll the mobile menu */
-    #scrollMenuBtn {
-        position: relative;
-        top: 0;
-        right: -60px;
-        width: 100%;
-        height: 65px;
-        background-color: rgb(240, 230, 230);
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        transition: 0.5s;
-        z-index: 100;
-    }
-    #scrollMenuBtn.active {
-        right: -100%;
-    }
-    #scrollMenuBtn::before {
-        content: "";
-        position: absolute;
-        top: 33px;
-        right: 10px;
-        width: 40px;
-        border-bottom: solid 2px #000;
-        border-radius: 5px;
-    }
-    #scrollMenuBtn::after {
-        content: "";
-        position: absolute;
-        top: 15px;
-        right: 10px;
-        width: 40px;
-        height: 34px;
-        border-top: solid 2px #000;
-        border-bottom: solid 2px #000;
-    }
+  /* The button that makes scroll the mobile menu */
+  #scrollMenuBtn {
+    position: relative;
+    top: 0;
+    right: -60px;
+    width: 100%;
+    height: 65px;
+    background-color: rgb(240, 230, 230);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 0.5s;
+    z-index: 100;
+  }
+  #scrollMenuBtn.active {
+    right: -100%;
+  }
+  #scrollMenuBtn::before {
+    content: "";
+    position: absolute;
+    top: 33px;
+    right: 10px;
+    width: 40px;
+    border-bottom: solid 2px #000;
+    border-radius: 5px;
+  }
+  #scrollMenuBtn::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    width: 40px;
+    height: 34px;
+    border-top: solid 2px #000;
+    border-bottom: solid 2px #000;
+  }
 
-    /* The mobile menu */
-    #menuMobile {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        right: 100%;
-        width: 50%;
-        min-width: 135px;
-        max-width: 300px;
-        height: 99%;
-        background-color: rgb(240, 230, 230);
-        border-bottom-right-radius: 20px;
-        transition: 0.5s;
-        z-index: 100;
+  /* The mobile menu */
+  #menuMobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 100%;
+    width: 50%;
+    min-width: 135px;
+    max-width: 300px;
+    height: 99%;
+    background-color: rgb(240, 230, 230);
+    border-bottom-right-radius: 20px;
+    transition: 0.5s;
+    z-index: 100;
+  }
+  #menuMobile.active {
+    right: 50%;
+  }
+  #scrollMenuLogo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 50px;
+  }
+  #mainMenuMobile {
+    font-size: 1.1rem;
+    overflow: scroll;
+  }
+  #mainMenuMobile > li {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 5px;
+  }
+  .arrow {
+    position: relative;
+    bottom: 0;
+    font-size: 0.9rem;
+    padding: 3px 5px 0 0;
+  }
+  .subMenu {
+    display: none;
+    font-size: 1rem;
+    margin: 0 auto;
+  }
+  .subMenu.active {
+    display: block;
+    animation-name: scrollSubMenu;
+    animation-duration: 1s;
+  }
+  @keyframes scrollSubMenu {
+    from {
+      opacity: 0;
     }
-    #menuMobile.active {
-        right: 50%;
+    to {
+      opacity: 1;
     }
-    #scrollMenuLogo {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        max-width: 50px;
-    }
-    #mainMenuMobile {
-        font-size: 1.1rem;
-        padding: 0;
-        margin: 0;
-    }
-    #mainMenuMobile > li {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 5px;
-        margin: 0;
-    }
-    .arrow {
-        position: relative;
-        bottom: 0;
-        font-size: 0.9rem;
-        padding: 3px 5px 0 0;
-        margin: 0;
-    }
-    .subMenu {
-        display: none;
-        font-size: 1rem;
-        padding: 0;
-        margin: 0 auto;
-    }
-    .subMenu.active {
-        display: block;
-        animation-name: scrollSubMenu;
-        animation-duration: 1s;
-    }
-    @keyframes scrollSubMenu {
-        from {opacity: 0;}
-        to {opacity: 1;}
-    }
-    .subMenu > li {
-        padding: 5px 0;
-    }
-    .subMenu > li > a {
-        display: flex;
-        align-items: center;
-    }
-    
-    #menuDesktop {
-        display: none;
-    }
+  }
+  .subMenu > li {
+    padding: 5px 0;
+  }
+  .subMenu > li > a {
+    display: flex;
+    align-items: center;
+  }
+
+  #menuDesktop {
+    display: none;
+  }
 }

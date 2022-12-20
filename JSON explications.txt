@@ -1,0 +1,39 @@
+Template vierge (pour copier) :
+
+{
+    "type": "",
+    "nom": "",
+    "img": "",
+    "dimensions": {
+        "hauteur": "",
+        "largeur": ""
+    },
+    "date_de_creation": "",
+    "temps_de_travail": "",
+    "materiel" : "",
+    "description": "",
+    "prix": "",
+    "disponible": true
+},
+
+
+----------------------------------------------------------------
+
+
+EXEMPLE :
+
+{
+    "type": "horloge",  !!! => type de produit, copier le bon type : horloge, miroir, tableau, dalle, nom_de_maison, blason
+    "nom": "Tête de chat",
+    "img": "./horloges/h1.jpg",	!!! => Mettre le nom du dossier suivi du nom de la photo avec l'extension. Exemple : "/horloges/h1.jpg"
+    "dimensions": {
+        "hauteur": "50",    !!! => Mettre uniquement la dimension en nombre entier et en centimètres. Exemple : "70" pour 70cm.
+        "largeur": "120"    !!! => Mettre uniquement la dimension en nombre entier et en centimètres. Exemple : "80" pour 80cm.
+    },
+    "date_de_creation": "05/07/2022",  !!! => Date en format JJ/MM/AAAA, en MM/AAAA, ou seulement l'année. Exemple : "02/01/2022" OU "05/2020" OU "2021".
+    "temps_de_travail": "30",  !!! => Mettre uniquement un nombre entier ou à vigule pour le temps en heures. Exemple : "52" OU "52,5".
+    "materiel" : "Céramique, peinture",   !!! => Mettre les matériaux séparés par des virgules.
+    "description": "Voici la description du produit",
+    "prix": "100",   !!! => Mettre uniquement le prix en nombre entier et sans "€". Exemple : "100" pour 100€.
+    "disponible": true   !!! => true : non vendu & false : vendu.
+}

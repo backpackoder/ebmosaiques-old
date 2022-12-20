@@ -1,0 +1,31 @@
+[
+    {
+        "type": "horloge",
+        "nom": "Collection blasons",
+        "img": "/horloges/h1.jpg",
+        "dimensions": {
+          "hauteur": "50",
+          "largeur": "120"
+        },
+        "date_de_creation": "02/01/2022",
+        "temps_de_travail": "52",
+        "materiel": "Céramique",
+        "description": "Ceci est une description d'un produit qui sera donc écrite depuis le produit JSON. Ceci est une description d'un produit qui sera donc écrite depuis le produit JSON. Ceci est une description d'un produit qui sera donc écrite depuis le produit JSON.",
+        "prix": "",
+        "disponible": true
+      },
+      {
+        "type": "horloge",
+        "nom": "Le tableau avec un long nom",
+        "img": "/horloges/h2.jpg",
+        "dimensions": {
+          "hauteur": "50",
+          "largeur": "120"
+        },
+        "date_de_creation": "02/01/2022",
+        "temps_de_travail": "52",
+        "description": "Ceci est une description d'un produit qui sera donc écrite depuis le produit JSON. Ceci est une description d'un produit qui sera donc écrite depuis le produit JSON. Ceci est une description d'un produit qui sera donc écrite depuis le produit JSON.",
+        "prix": "250",
+        "disponible": false
+      }
+]

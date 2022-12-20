@@ -19,3 +19,6 @@
   
   /* Ont the news */
   @import './css files/dansLaPresse.css';
+
+  /* Collection list */
+  @import './css files/collectionsList.css';
